@@ -6449,7 +6449,7 @@
     if (page === 1) medal_info = { status: $.Deferred(), medal_list: [] };
     let end = false;
     while (true) {
-      await BAPI.i.medal(page, 25).then((response) => {
+      await BAPI.i.medal(page).then((response) => {
         MYDEBUG('before init() getMedalList: API.i.medal', response);
         if (response.code === 0) {
           medal_info.medal_list = medal_info.medal_list.concat(response.data.fansMedalList);
